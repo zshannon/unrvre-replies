@@ -19,3 +19,19 @@ db.execute( "SELECT * FROM message WHERE is_from_me = 1" ) do |row|
 end
 
 puts "Found #{my_messages.count} messages."
+
+message_counts = {}
+
+my_messages.each do |message|
+  if c = message_counts[message[:text]]
+    message_counts[message[:text]] = c + 1
+  else
+    message_counts[message[:text]] = 0
+  end
+end
+
+message_counts = message_counts.sort_by { |_key, value| -value }
+
+message_counts.first(10).each do |text, count|
+  puts "#{text} appears #{count} times."
+end
