@@ -9,6 +9,24 @@ Find your most common iMessage messages.
 - `bundle install`
 - `ruby unrvre-replies.rb`
 
+## Example Output
+
+The above will produce something like this:
+```bash
+$ ruby unrvre-replies.rb 
+Found 9253 messages.
+ appears 187 times.
+Yep appears 35 times.
+Cool appears 24 times.
+Yes appears 19 times.
+Thanks appears 18 times.
+Yup appears 15 times.
+Happy Birthday! appears 14 times.
+Yeah appears 13 times.
+Sure appears 13 times.
+Huh? appears 12 times.
+```
+
 ## License
 MIT
 
