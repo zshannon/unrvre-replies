@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-db = SQLite3::Database.new "/Users/zcs/Library/Messages/chat.db"
+db = SQLite3::Database.new "#{ENV['HOME']}/Library/Messages/chat.db"
 
 message_table_index_to_column_name = {}
 
@@ -10,7 +10,7 @@ end
 
 my_messages = []
 
-db.execute( "SELECT * FROM message WHERE is_from_me = 1" ) do |row|
+db.execute("SELECT * FROM message WHERE is_from_me = 1;") do |row|
   message = {}
   row.each_with_index do |column, i|
     message[message_table_index_to_column_name[i]] = column
