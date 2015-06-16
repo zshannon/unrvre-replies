@@ -10,6 +10,7 @@ end
 
 my_messages = []
 
+# TODO: it'd be nice to do a better job of finding replies vs all authored messages
 db.execute("SELECT * FROM message WHERE is_from_me = 1;") do |row|
   message = {}
   row.each_with_index do |column, i|
